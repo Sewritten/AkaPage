@@ -1,0 +1,89 @@
+.aka {
+  /* Copyright 2018 Seia-Soto, All rights reserved. */
+}
+
+.navigating {
+  position: relative;
+  min-height: 50px;
+  width: 100%;
+  padding-top: 5px;
+  background-color: #23272a;
+}
+.mashing {
+  background-color: #23272a;
+  height: 400px;
+}
+
+.page {
+  padding-top: 35px;
+}
+  .additional {
+    display: none;
+  }
+    .project {
+      /* Additional project cards */
+    }
+  .distance {
+    padding-bottom: 0px;
+  }
+    .short {
+      padding-bottom: 15px;
+    }
+    .medium {
+      padding-bottom: 200px;
+    }
+    .long {
+      padding-bottom: 400px;
+    }
+    .full {
+      height: 100%;
+    }
+
+.colored {
+  color: white;
+}
+  .white {
+    color: white;
+  }
+  .red {
+    color: red;
+  }
+  .orange {
+    color: orange;
+  }
+  .yellow {
+    color: yellow;
+  }
+  .green {
+    color: green;
+  }
+  .skyblue {
+    color: skyblue;
+  }
+  .blue {
+    color: blue;
+  }
+  .purple {
+    color: purple;
+  }
+  .brown {
+    color: brown;
+  }
+  .gray {
+    color: gray;
+  }
+    .lightgray {
+      color: lightgray;
+    }
+    .darkslategray {
+      color: #2f4f4f;
+    }
+  .black {
+    color: black;
+  }
+.gradient {
+  background: white;
+}
+  .vicious_stance {
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  }
