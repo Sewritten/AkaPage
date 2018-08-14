@@ -12,6 +12,9 @@ function appearance(target) {
 function alteration(target, content) {
   pick(target).innerHTML = content
 }
+function remodel(target, content) {
+  pick(target).setAttribute('class', content)
+}
 
 // Semantic-UI migrated
 function toggleSidebar(target) {
@@ -19,6 +22,9 @@ function toggleSidebar(target) {
     .sidebar('toggle')
   ;
 }
+$('.menu .item')
+  .tab()
+;
 
 // Execute to make up the site enviroment
 document.addEventListener('DOMContentLoaded', function(event) {
