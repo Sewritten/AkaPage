@@ -12,7 +12,7 @@ function appearance(target) {
 function alteration(target, content) {
   pick(target).innerHTML = content
 }
-function remodel(target, content) {
+function restyle(target, content) {
   pick(target).setAttribute('class', content)
 }
 
@@ -22,11 +22,3 @@ function toggleSidebar(target) {
     .sidebar('toggle')
   ;
 }
-$('.menu .item')
-  .tab()
-;
-
-// Execute to make up the site enviroment
-document.addEventListener('DOMContentLoaded', function(event) {
-  document.querySelector('.additional').style.display = 'none';
-})
