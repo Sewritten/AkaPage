@@ -51,11 +51,11 @@
           <i class="search icon"></i>
         </div>
       </a>
-      <a class="item" href="literary/terms">
+      <a class="item" href="/literary/terms">
         약관
         <i class="clipboard outline icon"></i>
       </a>
-      <a class="item" href="literary/commission">
+      <a class="item" href="/literary/commission">
         커미션
         <i class="bookmark outline icon"></i>
       </a>
@@ -90,7 +90,7 @@
         ?>
         <div class="aka page">
           <div class="ui container">
-            <img class="ui avatar image" src="assets/images/seia.gif"><span>Seia Soto</span>
+            <img class="ui avatar image" src="/assets/images/seia.gif"><span>Seia Soto</span>
             <h1 class="ui header">Seia예요!</h1>
             <p>
               Soto(せいあそと{セイアソト}) is student who is developing with small base as well.<br>
