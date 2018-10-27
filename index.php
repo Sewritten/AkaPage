@@ -1,3 +1,7 @@
+<?php
+$page = !$_GET['path'] ? 'index' : strtolower($_GET['path']);
+$path = './pages/'. $page. '.aka.html';
+ ?>
 <!DOCTYPE html>
 <html lang="ko" dir="ltr">
   <head>
@@ -66,7 +70,7 @@
           <div class="ui inverted container">
             <nav class="aka navigation">
               <div class="ui inverted secondary menu">
-                <a class="ui active item" onclick="window.location.reload()">
+                <a class="ui active item" onclick="location.href='/'">
                   <i class="paper plane icon"></i>
                   Aka
                 </a>
@@ -84,8 +88,6 @@
         </div>
       </header>
       <?php
-      $page = !$_GET['path'] ? 'index' : strtolower($_GET['path']);
-      $path = './pages/'. $page. '.aka.html';
       if (!file_exists($path)) {
         ?>
         <div class="aka page">
