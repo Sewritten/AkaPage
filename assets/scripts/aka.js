@@ -22,3 +22,11 @@ function toggleSidebar(target) {
     .sidebar('toggle')
   ;
 }
+function toggleModal(target) {
+  $('.ui.modal' + target)
+    .modal({
+      blurring: true
+    })
+    .modal('toggle')
+  ;
+}
