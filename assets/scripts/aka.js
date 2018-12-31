@@ -1,7 +1,9 @@
-function pick(target) {
+// NOTE: Destructuring functions and objectives
+const pick = target => {
   return document.querySelector(target)
 }
 
+// NOTE: General functions
 function appearance(target) {
   if (pick(target).style.display === 'block') {
     pick(target).style.display = 'none'
@@ -22,11 +24,8 @@ function toggleSidebar(target) {
     .sidebar('toggle')
   ;
 }
-function toggleModal(target) {
-  $('.ui.modal' + target)
-    .modal({
-      blurring: true
-    })
-    .modal('toggle')
-  ;
-}
+
+// NOTE: After DOM contents are loaded
+document.addEventListener('DOMContentLoaded', function(event) {
+  // ...
+})
