@@ -27,5 +27,7 @@ function toggleSidebar(target) {
 
 // NOTE: After DOM contents are loaded
 document.addEventListener('DOMContentLoaded', function(event) {
-  // ...
+  $('.ui.accordion')
+    .accordion()
+  ;
 })
