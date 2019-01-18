@@ -123,7 +123,7 @@ $path = './pages/'. $page. '.aka.html';
               <i class="paper plane icon"></i>
               Aka
             </h4>
-            <p class="aka white colored">Copyright 2018 Seia-Soto. All rights reserved.</p>
+            <p class="aka white colored">Copyright 2019 Seia-Soto. All rights reserved.</p>
           </div>
         </div>
       </footer>
