@@ -10,6 +10,9 @@ function registerAkaComponents() {
   Aka.version = '0.0.1'
   Aka.release = 1219
 
+  Aka.eventListener = document.createEvent('Event')
+  Aka.eventListener.initEvent('AkaInitialized', true, true)
+
   // NOTE: Aka:Loader
   Aka.loader = document.querySelector('#aka-loader')
   Aka.loader.image = document.querySelector('#aka-loader-image')
@@ -24,7 +27,9 @@ function registerAkaComponents() {
   Aka.app = document.querySelector('#aka-app')
 
   // NOTE: Aka:Header
-  Aka.header = document.querySelector('#aka-header')
+  Aka.header =
+    document.querySelector('#aka-header') ||
+    document.querySelector('#aka-subpage-header')
   Aka.header.text = document.querySelector('#aka-header-text')
   Aka.header.text.title = document.querySelector('#aka-header-text-title')
   Aka.header.text.paragraph = document.querySelector('#aka-header-text-paragraph')
@@ -74,6 +79,7 @@ function startupAkaPage(Aka) {
 
     Aka.header.style.display = 'none'
     Aka.app.style.display = 'none'
+    Aka.footer.style.display = 'none'
 
     setTimeout(function() {
       window.location.reload(true)
@@ -91,6 +97,10 @@ function startupAkaPage(Aka) {
   /*
    * Initialize event listeners for components.
    */
+  document.addEventListener('AkaInitialized', function() {
+    console.log('AkaPage v' + Aka.version + ' initialized.')
+  })
+
   Aka.navbar.input.addEventListener('keydown', searchPost)
   Aka.navbar.input.button.addEventListener('click', searchPost)
 
@@ -104,6 +114,11 @@ function startupAkaPage(Aka) {
 
   // NOTE: Interval handlers.
   setInterval(() => checkUpdate(), 1000 * 30)
+
+  /*
+   * Fine.
+   */
+  document.dispatchEvent(Aka.eventListener)
 }
 
 const eventHandlers = {
@@ -140,6 +155,12 @@ const eventHandlers = {
       if (Aka.loader !== null) {
         Aka.loader.image = document.querySelector('#aka-loader-image')
         Aka.loader.image.innerHTML = '무언가 부서졌어요! 문제를 해결하는 중입니다'
+
+        Aka.loader.style.display = 'block'
+
+        Aka.header.style.display = 'none'
+        Aka.app.style.display = 'none'
+        Aka.footer.style.display = 'none'
       } else {
         alert('무언가 부서졌어요! 문제를 해결하는 중입니다')
       }
@@ -152,3 +173,8 @@ const eventHandlers = {
 }
 
 document.addEventListener('DOMContentLoaded', eventHandlers.DOMContentLoaded)
+
+// NOTE: External UI Lib components' handlers;
+function showModal(which) {
+  $('#' + which).modal('show')
+}
