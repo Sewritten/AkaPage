@@ -1,86 +1,72 @@
+/*
+ *   AkaPage;
+ * Copyright 2019 Seia-Soto. All rights reserved.
+ */
 html {
   scroll-behavior: smooth;
-}
-
-#aka-loader {
-  position: relative;
-
-  width: 100%;
-  height: 100%;
-
-  text-align: center;
-}
-#aka-loader-image {
-  position: absolute;
-
-  top: 50%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
-}
-
-#aka-app {
-  display: none;
-
-  margin-top: 32px;
-  margin-bottom: 32px;
-}
-
-#aka-header {
-  display: none;
 
   min-width: 100%;
-  min-height: 640px;
-
-  background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(240, 128, 128, 1) 100%), url(../images/beautiful-bloom-blooming-173665.jpg);
-  background-size: cover;
-
-  box-shadow: 0 0 16px gray;
-}
-#aka-subpage-header {
-  display: none;
-
-  min-width: 100%;
-  min-height: 280px;
-
-  background-image: linear-gradient(-225deg, #CBBACC 0%, #2580B3 100%);
-  background-size: cover;
-
-  box-shadow: 0 0 16px gray;
+  min-height: 100%;
 }
 
-#aka-updatenotify {
-  display: none;
-}
-
-#aka-footer {
-  display: none;
-
-  margin: 5em 0em 0em;
-  padding: 5em 0em;
-}
-
-.aka-animation-fade {
-  opacity: 1;
-  transition: opacity 1s;
-}
-.aka-animation-faded {
-  opacity: 0;
-}
-
-.aka-text-strongholds {
+.pointed {
+  color: white;
   background-color: black;
-
-  color: white;
-
-  font-size: 1.1em;
 }
-.aka-text-inverted {
-  color: white;
+.shadow {
+  box-shadow: 0px 2px 2px #2c2f33;
 }
 
-@media (max-width: 768px) {
-  .aka-desktop {
-    display: none !important;
-  }
+/*
+ * Body;
+ */
+body {
+
+}
+
+/*
+ * Header;
+ */
+header {
+  min-height: 480px;
+
+  background-image: linear-gradient(to bottom, black 5px, transparent), url(../images/architecture-books-bookshelves-1837726.jpg);
+  background-size: cover;
+}
+
+/*
+ * Navbar;
+ */
+nav {
+
+}
+
+.logo {
+  margin-right: 1.5em !important;
+}
+
+/*
+ * Hero;
+ */
+#hero {
+  padding: 12px;
+  margin-top: 40px;
+  margin-bottom: 440px;
+
+  color: white;
+}
+
+/*
+ * Content;
+ */
+section.content {
+  margin-top: 32px;
+}
+
+/*
+ * Footer;
+ */
+footer {
+  margin: 5em 0em 0em !important;
+  padding: 5em 0em !important;
 }

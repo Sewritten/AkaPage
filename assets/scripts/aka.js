@@ -1,180 +1,136 @@
-function registerAkaComponents() {
-  let Aka = {
-    // NOTE: Initialize collection of AkaComponents.
-  }
+/*
+ *   AkaPage;
+ * Copyright 2019 Seia-Soto. All rights reserved.
+ */
 
-  // NOTE: Defaults
-  Aka.baseURL = new URL(window.location.href).host
-  Aka.blogURL = 'https://b2.seia.io/'
-
-  Aka.version = '0.0.1'
-  Aka.release = 1219
-
-  Aka.eventListener = document.createEvent('Event')
-  Aka.eventListener.initEvent('AkaInitialized', true, true)
-
-  // NOTE: Aka:Loader
-  Aka.loader = document.querySelector('#aka-loader')
-  Aka.loader.image = document.querySelector('#aka-loader-image')
-
-  // NOTE: Aka:UpdateNotify
-  Aka.updatenotify = document.querySelector('#aka-updatenotify')
-  Aka.updatenotify.message = document.querySelector('#aka-updatenotify-message')
-  Aka.updatenotify.message.text = document.querySelector('#aka-updatenotify-message-text')
-  Aka.updatenotify.message.confirm = document.querySelector('#aka-updatenotify-message-confirm')
-
-  // NOTE: Aka:App
-  Aka.app = document.querySelector('#aka-app')
-
-  // NOTE: Aka:Header
-  Aka.header =
-    document.querySelector('#aka-header') ||
-    document.querySelector('#aka-subpage-header')
-  Aka.header.text = document.querySelector('#aka-header-text')
-  Aka.header.text.title = document.querySelector('#aka-header-text-title')
-  Aka.header.text.paragraph = document.querySelector('#aka-header-text-paragraph')
-  Aka.header.text.button = document.querySelector('#aka-header-text-button')
-
-  // NOTE: Aka:Navbar (inner at Aka:Header)
-  Aka.navbar = document.querySelector('#aka-navbar')
-  Aka.navbar.input = document.querySelector('#aka-navbar-input')
-  Aka.navbar.input.button = document.querySelector('#aka-navbar-input-button')
-
-  // NOTE: Aka:Footer
-  Aka.footer = document.querySelector('#aka-footer')
-
-  return Aka
+let AkaComponents = {
+  // NOTE: Initialize components.
 }
 
-function getWebContent(url) {
+AkaComponents.caches = null
+AkaComponents.pushds = null
+
+// NOTE: Preferences
+//  ; Function:wpInsertPosts
+const blogURI = 'https://b2.seia.io/'
+const maxPost = 6
+//  ; Function:alexaInsertRank
+const queryDomain = 'seia.io'
+
+// NOTE: Utilities
+function requestData(url, callback) {
+  console.log('AkaPage:requestData, requesting to ' + url)
+
   let request = new XMLHttpRequest()
 
-  request.open('GET', url, false)
+  request.onreadystatechange = function() {
+    if (request.readyState === 4  && request.status === 200) {
+      callback(request.responseText)
+    }
+  }
+
+  request.open('GET', url)
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; Charset=utf-8')
 
   request.send(null)
+}
+function parseXML(xml) {
+  const xmlDOM = new DOMParser().parseFromString(xml, 'text/xml')
 
-  if (request.readyState === 4  && request.status === 200) {
-    return request.responseText
+  return xmlDOM
+}
+
+function removeDisplayByElementsClassName(parentNode, className) {
+  if (className) {
+    let elements = document.querySelector(parentNode).querySelectorAll(className)
+
+    for (var k = 0; k < elements.length; k++) {
+      elements[k].style.display = 'none'
+    }
   } else {
-    return request.status
+    document.querySelector(parentNode).style.display = 'none'
   }
 }
+function createPostCard(post) {
+  let card = document.createElement('div')
+  card.setAttribute('class', 'ui card')
 
-function startupAkaPage(Aka) {
-  function checkUpdate() {
-    let latestRelease = getWebContent('./release')
+  let cardContent = document.createElement('div')
+  cardContent.setAttribute('class', 'content')
 
-    if (latestRelease > Aka.release) {
-      Aka.updatenotify.message.text.innerHTML =
-        'Aka 앱을 버전 ' + Aka.release + '에서 ' +
-        '버전 ' + latestRelease + '로 업데이트할 수 있습니다.'
-      Aka.updatenotify.style.display = 'block'
-    }
-  }
-  function confirmUpdate() {
-    Aka.loader.image.innerHTML = '잠시만 기다려주세요, 앱을 업데이트하고 있습니다'
+  let cardContentHeader = document.createElement('div')
+  cardContentHeader.setAttribute('class', 'header')
+  cardContentHeader.innerHTML = post.title.rendered
 
-    Aka.loader.style.display = 'block'
+  let cardContentDescription = document.createElement('p')
+  cardContentDescription.innerHTML = post.excerpt.rendered.replace(/\\n/gi, '').split('').slice(0, 50).join('') + '...'
 
-    Aka.header.style.display = 'none'
-    Aka.app.style.display = 'none'
-    Aka.footer.style.display = 'none'
+  let cardButton = document.createElement('a')
+  cardButton.setAttribute('class', 'ui bottom attached button')
+  cardButton.setAttribute('href', post.link)
 
-    setTimeout(function() {
-      window.location.reload(true)
-    }, 1000)
-  }
-  function searchPost() {
-    if (event.keyCode == 13) {
-      location.href =
-        Aka.blogURL + '?s=' +
-        Aka.navbar.input.value
-      Aka.navbar.input.value = ''
-    }
-  }
+  let cardButtonIcon = document.createElement('i')
+  cardButtonIcon.setAttribute('class', 'add icon')
 
-  /*
-   * Initialize event listeners for components.
-   */
-  document.addEventListener('AkaInitialized', function() {
-    console.log('AkaPage v' + Aka.version + ' initialized.')
-  })
+  cardContent.appendChild(cardContentHeader)
+  cardContent.appendChild(cardContentDescription)
 
-  Aka.navbar.input.addEventListener('keydown', searchPost)
-  Aka.navbar.input.button.addEventListener('click', searchPost)
+  cardButton.appendChild(cardButtonIcon)
+  cardButton.innerHTML += '\n더 읽기'
 
-  Aka.updatenotify.message.confirm.addEventListener('click', confirmUpdate)
+  card.appendChild(cardContent)
+  card.appendChild(cardButton)
 
-  /*
-   * Initialize interval tasks for components.
-   */
-  // NOTE: First burn group.
-  checkUpdate()
+  return card
+}
+function createListItem(options) {
+  let item = document.createElement('a')
+  item.setAttribute('class', 'item')
 
-  // NOTE: Interval handlers.
-  setInterval(() => checkUpdate(), 1000 * 30)
+  let icon = document.createElement('i')
+  icon.setAttribute('class', 'right triangle icon')
 
-  /*
-   * Fine.
-   */
-  document.dispatchEvent(Aka.eventListener)
+  let itemContent = document.createElement('div')
+  itemContent.setAttribute('class', 'content')
+
+  let itemContentHeader = document.createElement('div')
+  itemContentHeader.setAttribute('class', 'header')
+  itemContentHeader.innerHTML = options.title
+
+  let itemContentDescription = document.createElement('div')
+  itemContentDescription.setAttribute('class', 'description')
+  itemContentDescription.innerHTML = options.description
+
+  return item
 }
 
-const eventHandlers = {
-  DOMContentLoaded: function() {
-    try {
-      const Aka = registerAkaComponents()
+// NOTE: Section builders
+function wpInsertPosts(responseText) {
+  console.log('AkaPage:wpInsertPosts, got response from API route and now constructing cards')
+  const posts = JSON.parse(responseText)
 
-      /*
-       * Initialize UI components
-       */
-      $('.ui.dropdown').dropdown()
+  // NOTE: Make big collection for posts:
+  let cards = document.createElement('div')
+  cards.setAttribute('class', 'ui cards')
 
-      // NOTE: Start up.
-      startupAkaPage(Aka)
+  for (var i = 0; i < maxPost; i++) {
+    const post = posts[i]
 
-      setTimeout(function() {
-        Aka.loader.image.innerHTML = '모두 완료되었습니다'
-      }, 500)
-      setTimeout(function() {
-        Aka.loader.style.display = 'none'
-
-        Aka.header.style.display = 'block'
-        Aka.app.style.display = 'block'
-        Aka.footer.style.display = 'block'
-      }, 1000)
-    } catch (error) {
-      console.error(error)
-
-      Aka = {
-        // NOTE: Try initializing DOM again and reload.
-      }
-      Aka.loader = document.querySelector('#aka-loader')
-
-      if (Aka.loader !== null) {
-        Aka.loader.image = document.querySelector('#aka-loader-image')
-        Aka.loader.image.innerHTML = '무언가 부서졌어요! 문제를 해결하는 중입니다'
-
-        Aka.loader.style.display = 'block'
-
-        Aka.header.style.display = 'none'
-        Aka.app.style.display = 'none'
-        Aka.footer.style.display = 'none'
-      } else {
-        alert('무언가 부서졌어요! 문제를 해결하는 중입니다')
-      }
-
-      setTimeout(function() {
-        window.location.reload(true)
-      }, 1000 * 15)
-    }
+    cards.appendChild(createPostCard(post))
   }
+
+  let recentFeed = document.querySelector('#recentFeed')
+
+  removeDisplayByElementsClassName('#recentFeed', '.placeholder')
+  recentFeed.appendChild(cards)
 }
 
-document.addEventListener('DOMContentLoaded', eventHandlers.DOMContentLoaded)
+// NOTE: Aka
+function AkaConstructor() {
+  console.log('AkaPage, also we think User Interface is the language of the web.')
+  console.log('----')
 
-// NOTE: External UI Lib components' handlers;
-function showModal(which) {
-  $('#' + which).modal('show')
+  requestData(blogURI + 'wp-json/wp/v2/posts', wpInsertPosts)
 }
+
+document.addEventListener('DOMContentLoaded', AkaConstructor)
