@@ -13,7 +13,7 @@ AkaComponents.pushds = null
 // NOTE: Preferences
 //  ; Function:wpInsertPosts
 const blogURI = 'https://b2.seia.io/'
-const maxPost = 6
+const maxPost = 4
 //  ; Function:alexaInsertRank
 const queryDomain = 'seia.io'
 
@@ -41,6 +41,8 @@ function parseXML(xml) {
 }
 
 function removeDisplayByElementsClassName(parentNode, className) {
+  console.log('AkaPage:removeDisplayByElementsClassName, removing ' + className +' for ' + parentNode)
+
   if (className) {
     let elements = document.querySelector(parentNode).querySelectorAll(className)
 
@@ -110,19 +112,23 @@ function wpInsertPosts(responseText) {
   const posts = JSON.parse(responseText)
 
   // NOTE: Make big collection for posts:
-  let cards = document.createElement('div')
-  cards.setAttribute('class', 'ui cards')
+  let grid = document.createElement('div')
+  grid.setAttribute('class', 'ui four column stackable grid')
 
   for (var i = 0; i < maxPost; i++) {
     const post = posts[i]
 
-    cards.appendChild(createPostCard(post))
+    let column = document.createElement('div')
+    column.setAttribute('class', 'column')
+
+    column.appendChild(createPostCard(post))
+    grid.appendChild(column)
   }
 
   let recentFeed = document.querySelector('#recentFeed')
 
   removeDisplayByElementsClassName('#recentFeed', '.placeholder')
-  recentFeed.appendChild(cards)
+  recentFeed.appendChild(grid)
 }
 
 // NOTE: Aka
