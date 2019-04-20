@@ -18,13 +18,14 @@ html {
  * Body;
  */
 body {
-
+  width: 100vw !important;
 }
 
 /*
  * Header;
  */
 header {
+  width: 100vw !important;
   min-height: 480px;
 
   background-image: linear-gradient(to bottom, black 5px, transparent), url(../images/architecture-books-bookshelves-1837726.jpg);
@@ -65,4 +66,6 @@ section.content {
 footer {
   margin: 5em 0em 0em !important;
   padding: 5em 0em !important;
+
+  width: 100vw !important;
 }
