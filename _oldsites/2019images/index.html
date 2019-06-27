@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!--
+   AkaPage;
+Copyright 2019 Seia-Soto. All rights reserved.
+-->
+<html lang="ko" dir="ltr">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130620056-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-130620056-5');
+    </script>
+
+    <meta charset="utf-8">
+    <title>Seia-Soto</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Seia-Soto">
+    <meta name="description" content="Aka, Seia Soto. 아카- 세야! 포트폴리오 사이트예요.">
+
+    <link rel="stylesheet" type="text/css" href="ui/semantic.min.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="ui/semantic.min.js"></script>
+
+    <link rel="stylesheet" href="assets/styles/aka.css">
+  </head>
+  <body>
+    <div class="ui right sidebar inverted vertical menu">
+      <div class="item">
+        <div class="ui inverted transparent icon input">
+          <input class="blogSearchInput" type="text" placeholder="블로그 검색...">
+          <i class="search icon"></i>
+        </div>
+      </div>
+      <a class="item" href="https://b2.seia.io">
+        <i class="wordpress icon"></i>
+        블로그
+      </a>
+      <a class="item" href="https://serium.seia.io">
+        Serium
+      </a>
+      <a class="item" href="https://ohys.seia.io">
+        Ohys
+      </a>
+    </div>
+    <div class="dimmed pusher">
+      <header>
+        <nav>
+          <div class="ui grey inverted fixed secondary menu">
+            <div class="ui container">
+              <a href="" id="identityItem" class="item">
+                <img class="ui avatar image" src="assets/images/70131984_p0_master1200_avatarsize.jpg">
+                <span>&nbsp; Seia-Soto</span>
+              </a>
+              <a class="desktop item" href="https://b2.seia.io">
+                블로그
+              </a>
+              <a class="desktop item" href="https://serium.seia.io">
+                Serium
+              </a>
+              <a class="desktop item" href="https://ohys.seia.io">
+                Ohys
+              </a>
+              <div class="desktop right menu">
+                <div href="#" class="item">
+                  <div class="ui transparent inverted icon input">
+                    <input class="blogSearchInput" type="text" placeholder="블로그 검색...">
+                    <i class="search icon"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- IDEA: Mobile menu -->
+              <div class="mobile right menu">
+                <div href="#" id="sidebarToggle" class="item">
+                  <i class="bars icon"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <!-- IDEA: Loader
+      <article id="loaderPusher">
+
+      </article>
+      -->
+      <article id="contentPusher">
+        <article id="mainHero">
+          <div class="ui center aligned container">
+            <h2 class="ui header">
+              점점 더 많은 사람들,<br>
+              더 많은 정보를 꼭짓점과<br>
+              선분과 같이<br>
+              하나하나 이어갑니다
+              <div class="sub header">
+                저는 일러스트레이터도, 디자이너도 아닙니다.<br>
+                여러분을 연결해주는 한낱 학생 프로그래머입니다.
+              </div>
+            </h2>
+          </div>
+        </article>
+
+        <!-- IDEA: Main promotion pages -->
+        <article id="contentWrapper">
+          <div id="seriumPage" class="pushed full page">
+            <div class="ui container">
+              <h2 class="ui inverted huge header">
+                <span class="neonsign">
+                  <span class="neonsign active">#Serium</span><br>
+                  <br>
+                  아무도 없는 Discord를<br>
+                  <span class="neonsign active">봇으로부터 보호</span>하세요
+                </span>
+                <div class="sub header">
+                  당신의 Discord 서버를 위한<br>
+                  멤버 스패밍 차단부터 개성있는 네임 파레트까지.
+                </div>
+              </h2>
+
+              <a class="ui right labeled primary icon button" href="https://discordapp.com/api/oauth2/authorize?client_id=429913480708096000&permissions=8&redirect_uri=https%3A%2F%2Fauthentication.seia.io%2Fdiscordapp&scope=bot">
+                <i class="right arrow icon"></i>
+                지금 서버에 초대하기
+              </a>
+            </div>
+          </div>
+          <div id="teamPage" class="pushed full page">
+            <div class="ui right aligned container">
+              <h2 class="ui huge header">
+                함께 작품을 만들 당신을<br>
+                찾고 있습니다
+                <div class="sub header">
+                  함께 하시겠습니까?<br>
+                  또한 공동협업 시에 서비스 호스트에 필요한<br>
+                  서버 또한 준비되어 있습니다.<br>
+                  <br>
+                  <div class="ui horizontal bulleted list">
+                    <div class="item">일본 Vultr 기반 가상서버</div>
+                    <div class="item">GitHub에서 오픈소스 기여</div>
+                    <div class="item">타 프로젝트 문서 번역</div>
+                  </div>
+                </div>
+              </h2>
+
+              <a class="ui right labeled secondary icon button" href="https://discordapp.com/invite/NjAjJqB">
+                <i class="discord icon"></i>
+                Discord에서 함께하기
+              </a>
+            </div>
+          </div>
+          <div id="sponsorPage" class="pushed full page">
+            <div class="ui center aligned container">
+              <h2 class="ui huge header">
+                프로젝트를 뒤에서<br>
+                지켜보세요,<br>
+                그리고 밀어주세요
+                <div class="sub header">
+                  모든 프로젝트는 오픈소스로 진행됩니다.<br>
+                  또한 언제나 더 좋은 서비스 품질을 제공하기 위해 스폰서를 두고 있습니다.<br>
+                  <br>
+                  <b>*스폰서 현황은 공식적으로 공개되지 않으며, Patreon은 현재 사용하지 않습니다.</b>
+                </div>
+              </h2>
+
+              <a class="ui right labeled secondary icon button" href="https://discordapp.com/invite/NjAjJqB">
+                <i class="discord icon"></i>
+                Discord로 문의
+              </a>
+              <a class="ui right labeled blue icon button" href="https://twitter.com/Seia_Soto">
+                <i class="discord icon"></i>
+                Twitter로 문의
+              </a>
+            </div>
+          </div>
+
+          <!-- IDEA: Main content pages -->
+          <div class="page">
+            <div class="ui container">
+              <h2 class="ui header">
+                한 달 동안,<br>
+                쉴 틈없이 연결했습니다<br>
+              </h2>
+
+              <div class="ui equal width stackable internally celled column center aligned grid">
+                <div class="column">
+                  <div class="ui statistic">
+                    <div class="value">
+                      26K
+                    </div>
+                    <div class="label">
+                      사용자
+                    </div>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="ui statistic">
+                    <div class="value">
+                      35.6K
+                    </div>
+                    <div class="label">
+                      세션
+                    </div>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="ui statistic">
+                    <div class="value">
+                      92K
+                    </div>
+                    <div class="label">
+                      페이지뷰
+                    </div>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="ui statistic">
+                    <div class="value">
+                      160,704K
+                    </div>
+                    <div class="label">
+                      데이터베이스 질의
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page">
+            <div class="ui container">
+              <h2 class="ui header">
+                이전 디자인을<br>
+                찾고 계신가요?
+              </h2>
+
+              <div class="ui list">
+                <a class="item" href="_oldsites/2018default/index.html">
+                  <i class="folder icon"></i>
+                  <div class="content">
+                    <div class="header">2018default</div>
+                    <div class="description">2018년도 AkaPage의 첫 디자인.</div>
+                  </div>
+                </a>
+                <a class="item" href="_oldsites/2018xmas/index.html">
+                  <i class="folder icon"></i>
+                  <div class="content">
+                    <div class="header">2018xmas</div>
+                    <div class="description">2018년도 AkaPage의 크리스마스를 위한 특별 디자인.</div>
+                  </div>
+                </a>
+                <a class="item" href="_oldsites/2019newyear/index.html">
+                  <i class="folder icon"></i>
+                  <div class="content">
+                    <div class="header">2019newyear</div>
+                    <div class="description">2019년도 AkaPage의 새해 축하 디자인.</div>
+                  </div>
+                </a>
+                <a class="item" href="_oldsites/2019wide/index.html">
+                  <i class="folder icon"></i>
+                  <div class="content">
+                    <div class="header">2019wide</div>
+                    <div class="description">2019년도 AkaPage의 의미있는 첫 디자인 그리고 새 헤더.</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </article>
+
+      <footer class="ui inverted vertical footer segment">
+        <div class="ui center aligned container">
+          <div class="ui stackable inverted divided grid">
+            <div class="four wide column">
+              <h4 class="ui inverted header">소셜</h4>
+              <div class="ui inverted link list">
+                <a class="item" href="https://twitter.com/Seia_Soto">
+                  <i class="twitter icon"></i>
+                  Twitter
+                </a>
+                <a class="item" href="https://github.com/Seia-Soto">
+                  <i class="github icon"></i>
+                  GitHub
+                </a>
+                <a class="item" href="https://discordapp.com/invite/NjAjJqB">
+                  <i class="discord icon"></i>
+                  Discordapp
+                </a>
+                <a class="item" href="mailto:seia@outlook.kr">
+                  <i class="mail icon"></i>
+                  Mail
+                </a>
+              </div>
+            </div>
+            <div class="four wide column">
+              <h4 class="ui inverted header">네트워크</h4>
+              <div class="ui inverted link list">
+                <a class="item" href="https://b2.seia.io">
+                  <i class="wordpress icon"></i>
+                  블로그
+                </a>
+              </div>
+            </div>
+            <div class="eight wide column">
+              <h4 class="ui inverted header">Seia Soto</h4>
+              <p>
+                Seia(せいあそと{セイアソト}) is student who is developing with small base as well.<br>
+                Known as learner, writer, translator, developer and illustrator.
+              </p>
+            </div>
+          </div>
+          <div class="ui inverted section divider"></div>
+          <img class="ui centered mini image" src="assets/images/70131984_p0_master1200_avatarsize.jpg" />
+          <div class="ui horizontal inverted small divided link list">
+            <a class="item" href="https://github.com/Seia-Soto/AkaPage">
+              Copyright 2019 Seia-Soto. All rights reserved.
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="assets/scripts/aka.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>
