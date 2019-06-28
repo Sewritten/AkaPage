@@ -20,7 +20,7 @@ Copyright 2019 Seia-Soto. All rights reserved.
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Seia-Soto">
-    <meta name="description" content="가지마다 아름다움의 가치를">
+    <meta name="description" content="가지마다 아름다움의 가치를, Seia-Soto의 AkaPage.">
 
     <link rel="shortcut icon" href="assets/images/70131984_p0_master1200_avatarsize.jpg" />
 
@@ -35,6 +35,20 @@ Copyright 2019 Seia-Soto. All rights reserved.
   </head>
   <body>
     <div class="ui right borderless sidebar inverted vertical menu">
+      <div class="header item">
+        — AkaPage
+      </div>
+      <a class="item" href="#project">
+        <i class="tag icon"></i>
+        프로젝트
+      </a>
+      <a class="item" href="#partnership">
+        <i class="tag icon"></i>
+        파트너쉽
+      </a>
+      <div class="header item">
+        — 소셜
+      </div>
       <a class="item" href="https://b2.seia.io">
         <i class="wordpress icon"></i>
         블로그
@@ -51,17 +65,21 @@ Copyright 2019 Seia-Soto. All rights reserved.
         <i class="github icon"></i>
         GitHub
       </a>
+      <a class="item" href="mailto:seia@outlook.kr">
+        <i class="envelope icon"></i>
+        Email
+      </a>
     </div>
 
     <div class="pusher">
       <nav>
         <div class="ui borderless top fixed menu">
           <div class="ui container">
-            <div href="" class="item">
+            <div class="item" onclick="location.href=''">
               <img class="ui avatar image" src="assets/images/70131984_p0_master1200_avatarsize.jpg">
               &nbsp; Seia-Soto
             </div>
-            <a class="right item" onclick="$('.ui.sidebar').sidebar('toggle')">
+            <a class="right item" onclick="$('.ui.sidebar').sidebar('setting', 'transition', 'overlay').sidebar('toggle')">
               <i class="bars icon"></i>
               메뉴
             </a>
@@ -83,6 +101,44 @@ Copyright 2019 Seia-Soto. All rights reserved.
         </div>
       </header>
 
+      <article class="ui basic center aligned container segment">
+        <section class="aka heading">
+          <h2 class="ui horizontal divider header">가지마다 — 나만의 가치 달아주기:</h2>
+          <p>
+            학생의 아담한 포트폴리오를 찾아주셔서 감사합니다.<br>
+            4년 전, 첫 개발활동을 시작으로 그 다음을 위해서 공부합니다.
+          </p>
+        </section>
+
+        <img class="ui centered small circular image" src="assets/images/70131984_p0_master1200_avatarsize.jpg">
+        <h1 class="ui header">
+          Seia-Soto
+          <a class="ui teal label" onclick="$('.ui.sidebar').sidebar('setting', 'transition', 'overlay').sidebar('toggle')">문의</a>
+        </h1>
+        <p>
+          Seia(せいあそと{セイアソト}) is student who is developing with small base as well.<br>
+          Known as learner, writer, translator, developer and illustrator.
+        </p>
+
+        <div class="ui tag labels">
+          <div class="ui label">
+            Machine learning
+          </div>
+          <div class="ui label">
+            WordPress translation
+          </div>
+          <div class="ui label">
+            Linuxer
+          </div>
+          <div class="ui label">
+            Ohys contributor
+          </div>
+          <div class="ui label">
+            Open-source contributor
+          </div>
+        </div>
+      </article>
+
       <section class="ui basic center aligned container segment aka promotion">
         <h3 class="ui header">
           <a href="https://github.com/serium-departments/Serium">[Promo] Serium v4 Cadet 릴리즈</a>
@@ -90,77 +146,69 @@ Copyright 2019 Seia-Soto. All rights reserved.
         <p>멀티 스레딩 지원(Sharding)과 더 깔끔해진 코드 베이스를 <a href="https://github.com/serium-departments/Serium">지금 확인</a>해보세요.</p>
       </section>
 
-      <article class="ui basic container segment">
+      <article class="ui basic container segment" id="project">
         <section class="aka heading">
           <h2 class="ui horizontal divider header">프로젝트:</h2>
         </section>
 
         <div class="ui center aligned aka summary">
-          <div class="ui stackable equal width grid">
-            <div class="column">
-              <a class="ui fluid card" href="https://github.com/serium-departments/Serium">
-                <div class="content">
-                  <div class="center aligned header">Serium</div>
-                  <div class="center aligned description">
-                    <p>The way how to get improved creativity and multi-purpose in Discord.</p>
-                  </div>
+          <div class="ui four stackable cards">
+            <a class="ui fluid card" href="https://github.com/serium-departments/Serium">
+              <div class="content">
+                <div class="center aligned header">Serium</div>
+                <div class="center aligned description">
+                  <p>The way how to get improved creativity and multi-purpose in Discord.</p>
                 </div>
-                <div class="extra content">
-                  <div class="center aligned author">
-                    <i class="github icon"></i>
-                    GitHub
-                  </div>
+              </div>
+              <div class="extra content">
+                <div class="center aligned author">
+                  <i class="github icon"></i>
+                  GitHub
                 </div>
-              </a>
-            </div>
-            <div class="column">
-              <a class="ui fluid card" href="https://github.com/Seia-Soto/Ohys-Fanmade">
-                <div class="content">
-                  <div class="center aligned header">Ohys-Fanmade</div>
-                  <div class="center aligned description">
-                    <p>The fanmade site of Ohys-Raws.</p>
-                  </div>
+              </div>
+            </a>
+            <a class="ui fluid card" href="https://github.com/Seia-Soto/Ohys-Fanmade">
+              <div class="content">
+                <div class="center aligned header">Ohys-Fanmade</div>
+                <div class="center aligned description">
+                  <p>The fanmade site of Ohys-Raws.</p>
                 </div>
-                <div class="extra content">
-                  <div class="center aligned author">
-                    <i class="github icon"></i>
-                    GitHub
-                  </div>
+              </div>
+              <div class="extra content">
+                <div class="center aligned author">
+                  <i class="github icon"></i>
+                  GitHub
                 </div>
-              </a>
-            </div>
-            <div class="column">
-              <a class="ui fluid card" href="https://github.com/Seia-Soto/invisibleHandshake">
-                <div class="content">
-                  <div class="center aligned header">invisibleHandshake</div>
-                  <div class="center aligned description">
-                    <p>Ignore Korea Communications Commission's prvention policy that filters SNI field, by spliting transmission units of connection.</p>
-                  </div>
+              </div>
+            </a>
+            <a class="ui fluid card" href="https://github.com/Seia-Soto/invisibleHandshake">
+              <div class="content">
+                <div class="center aligned header">invisibleHandshake</div>
+                <div class="center aligned description">
+                  <p>Ignore Korea Communications Commission's prvention policy that filters SNI field, by spliting transmission units of connection.</p>
                 </div>
-                <div class="extra content">
-                  <div class="center aligned author">
-                    <i class="github icon"></i>
-                    GitHub
-                  </div>
+              </div>
+              <div class="extra content">
+                <div class="center aligned author">
+                  <i class="github icon"></i>
+                  GitHub
                 </div>
-              </a>
-            </div>
-            <div class="column">
-              <a class="ui fluid card" href="https://github.com/Seia-Soto/AkaPage">
-                <div class="content">
-                  <div class="center aligned header">AkaPage</div>
-                  <div class="center aligned description">
-                    <p>Personal portfolio site.</p>
-                  </div>
+              </div>
+            </a>
+            <a class="ui fluid card" href="https://github.com/Seia-Soto/AkaPage">
+              <div class="content">
+                <div class="center aligned header">AkaPage</div>
+                <div class="center aligned description">
+                  <p>Personal portfolio site.</p>
                 </div>
-                <div class="extra content">
-                  <div class="center aligned author">
-                    <i class="github icon"></i>
-                    GitHub
-                  </div>
+              </div>
+              <div class="extra content">
+                <div class="center aligned author">
+                  <i class="github icon"></i>
+                  GitHub
                 </div>
-              </a>
-            </div>
+              </div>
+            </a>
           </div>
 
           <div class="ui center aligned basic segment">
@@ -182,14 +230,14 @@ Copyright 2019 Seia-Soto. All rights reserved.
             완전한 오픈소스로 개발되었으며, 서버로의 봇 방지 그리고 네임 파레트 기능을 제공합니다.
           </p>
 
-          <button class="ui primary button" onclick="location.href='https://discordapp.com/api/oauth2/authorize?client_id=429913480708096000&permissions=8&redirect_uri=https%3A%2F%2Fauthentication.seia.io%2Fdiscordapp&scope=bot">
+          <a class="ui primary button" href="https://discordapp.com/api/oauth2/authorize?client_id=429913480708096000&permissions=8&redirect_uri=https%3A%2F%2Fauthentication.seia.io%2Fdiscordapp&scope=bot">
             초대하기
             <i class="right arrow icon"></i>
-          </button>
-          <button class="ui secondary button" onclick="location.href='https://github.com/Seia-Soto/Serium">
+          </a>
+          <a class="ui secondary button" href="https://github.com/Seia-Soto/Serium">
             <i class="github icon"></i>
             GitHub에서 보기
-          </button>
+          </a>
 
           <div class="ui basic segment">
             <img class="ui rounded fluid image" src="assets/images/etc/screenshot-serium-help.png" alt="Screenshot of Serium help command">
@@ -208,14 +256,14 @@ Copyright 2019 Seia-Soto. All rights reserved.
             Semantic-UI의 모토가 'User Interface is the language of the web'인 것처럼요.
           </p>
 
-          <button class="ui primary button" onclick="location.href='https://ohys.seia.io">
+          <a class="ui primary button" href="https://ohys.seia.io">
             서비스로 이동
             <i class="right arrow icon"></i>
-          </button>
-          <button class="ui secondary button" onclick="location.href='https://github.com/Seia-Soto/Ohys-Fanmade">
+          </a>
+          <a class="ui secondary button" href="https://github.com/Seia-Soto/Ohys-Fanmade">
             <i class="github icon"></i>
             GitHub에서 보기
-          </button>
+          </a>
 
           <div class="ui basic segment">
             <img class="ui rounded fluid image" src="assets/images/etc/screenshot-ohys-main.png" alt="Screenshot of Serium help command">
@@ -230,26 +278,24 @@ Copyright 2019 Seia-Soto. All rights reserved.
         <p>팀부터 파트너쉽까지 그리고 개인적으로도 Discord에서 물어보실 수 있어요.</p>
       </section>
 
-      <article class="ui basic center aligned container segment">
+      <article class="ui basic center aligned container segment" id="partnership">
         <section class="aka heading">
           <h2 class="ui horizontal divider header">파트너쉽:</h2>
-        </section>
+          <p>한 달 동안, 안정적으로 서비스했습니다.</p>
 
-        <section class="aka summary">
-          <p>한 달 동안, 안정적으로 서비스했답니다.</p>
           <div class="ui tag labels">
-            <a class="ui label">
+            <div class="ui label">
               3만 명의 사용자
-            </a>
-            <a class="ui label">
+            </div>
+            <div class="ui label">
               4만 개의 세션
-            </a>
-            <a class="ui label">
+            </div>
+            <div class="ui label">
               10만 페이지뷰
-            </a>
-            <a class="ui label">
+            </div>
+            <div class="ui label">
               1억 데이터베이스 쿼리
-            </a>
+            </div>
           </div>
         </section>
 
