@@ -11,7 +11,7 @@ header {
 
   padding-top: 200px;
 
-  background-image: linear-gradient(to left, #ffffff 2%, transparent), url(../images/pexels-photo-2395249.jpeg);
+  /* background-image: linear-gradient(to left, #ffffff 2%, transparent), url(../images/pexels-photo-2395249.jpeg); */
 
   background-position: center;
   background-size: cover;
@@ -34,9 +34,13 @@ article {
   padding-top: 40px;
 }
 
-span.blackout {
+span.aka.blackout {
   color: white;
   background-color: black;
+}
+span.aka.whitein {
+  color: black;
+  background-color: white;
 }
 
 .aka.heading {
